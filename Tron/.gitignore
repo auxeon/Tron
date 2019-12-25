@@ -1,8 +1,11 @@
 # Dirs to ignore
-.vs/
-bin/
-bin-int/
+/bin/
+!/libs/bin/premake/
+/bin-int/
 
 # Files
-*.user
-
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
