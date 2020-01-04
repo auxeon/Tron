@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -96,7 +97,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -120,7 +122,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -144,10 +147,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Tron.h" />
-    <ClInclude Include="inc\Application.h" />
-    <ClInclude Include="inc\Core.h" />
-    <ClInclude Include="inc\EntryPoint.h" />
-    <ClInclude Include="inc\Log.h" />
+    <ClInclude Include="inc\core\Application.h" />
+    <ClInclude Include="inc\core\Core.h" />
+    <ClInclude Include="inc\core\EntryPoint.h" />
+    <ClInclude Include="inc\core\Log.h" />
+    <ClInclude Include="inc\events\ApplicationEvent.h" />
+    <ClInclude Include="inc\events\Event.h" />
+    <ClInclude Include="inc\events\KeyEvent.h" />
+    <ClInclude Include="inc\events\MouseEvent.h" />
+    <ClInclude Include="inc\tronpch.h" />
     <ClInclude Include="libs\spdlog\bench\utils.h" />
     <ClInclude Include="libs\spdlog\include\spdlog\async.h" />
     <ClInclude Include="libs\spdlog\include\spdlog\async_logger-inl.h" />
@@ -230,8 +238,11 @@
     <ClInclude Include="libs\spdlog\tests\utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\Log.cpp" />
+    <ClCompile Include="src\core\Application.cpp" />
+    <ClCompile Include="src\core\Log.cpp" />
+    <ClCompile Include="src\tronpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

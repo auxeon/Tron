@@ -1,11 +1,11 @@
 #pragma once
 
 // For Non Tron external applications
-#include "inc/Application.h"
+#include "inc/core/Application.h"
 
 // Logger
-#include "inc/Log.h"
+#include "inc/core/Log.h"
 
 // EntryPoint
-#include "inc/EntryPoint.h"
+#include "inc/core/EntryPoint.h"
 

@@ -1,4 +1,6 @@
 #pragma once
+#include "tronpch.h"
+
 
 #ifdef TRON_PLATFORM_WINDOWS
 

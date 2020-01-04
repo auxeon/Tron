@@ -1,4 +1,5 @@
 #pragma once
+#include "tronpch.h"
 
 #ifdef  TRON_PLATFORM_WINDOWS
 	#ifdef TRON_BUILD_DLL
@@ -10,3 +11,5 @@
 #error Tron supports windows only.
 #endif //  TRON_PLATFORM_WINDOWS
 
+
+#define BIT(x) (1 << x)

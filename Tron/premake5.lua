@@ -17,6 +17,9 @@ project "Tron"
     targetdir("bin/" .. outputdir .. "/%{prj.name}")
     objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "tronpch.h"
+    pchsource "Tron/src/tronpch.cpp"
+
     files{
         "%{prj.name}/inc/**.h",
         "%{prj.name}/src/**.cpp",

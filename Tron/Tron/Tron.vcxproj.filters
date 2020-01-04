@@ -4,6 +4,9 @@
     <Filter Include="inc">
       <UniqueIdentifier>{1F80880B-8B89-887C-1405-9F7C800D947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="inc\events">
+      <UniqueIdentifier>{43070C5F-2FBF-4DAC-98C6-2608849DE89C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="libs">
       <UniqueIdentifier>{2F149A7C-1B4B-9B0D-C437-8110B04D170F}</UniqueIdentifier>
     </Filter>
@@ -40,16 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tron.h" />
-    <ClInclude Include="inc\Application.h">
-      <Filter>inc</Filter>
+    <ClInclude Include="inc\events\ApplicationEvent.h">
+      <Filter>inc\events</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Core.h">
-      <Filter>inc</Filter>
+    <ClInclude Include="inc\events\Event.h">
+      <Filter>inc\events</Filter>
     </ClInclude>
-    <ClInclude Include="inc\EntryPoint.h">
-      <Filter>inc</Filter>
+    <ClInclude Include="inc\events\KeyEvent.h">
+      <Filter>inc\events</Filter>
     </ClInclude>
-    <ClInclude Include="inc\Log.h">
+    <ClInclude Include="inc\events\MouseEvent.h">
+      <Filter>inc\events</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\tronpch.h">
       <Filter>inc</Filter>
     </ClInclude>
     <ClInclude Include="libs\spdlog\bench\utils.h">
@@ -292,12 +298,27 @@
     <ClInclude Include="libs\spdlog\tests\utils.h">
       <Filter>libs\spdlog\tests</Filter>
     </ClInclude>
+    <ClInclude Include="inc\core\Log.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Application.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Core.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\EntryPoint.h">
+      <Filter>inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp">
+    <ClCompile Include="src\tronpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Log.cpp">
+    <ClCompile Include="src\core\Application.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Log.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

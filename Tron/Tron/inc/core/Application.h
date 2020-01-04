@@ -1,6 +1,6 @@
 #pragma once
-
-#include "Core.h"
+#include "tronpch.h"
+#include "core/Core.h"
 
 namespace Tron {
 	class TRON_API Application
