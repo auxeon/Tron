@@ -9,6 +9,12 @@ workspace "Tron"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Tron/libs/GLFW/include"
+
+include "Tron/libs/GLFW"
+
+
 project "Tron"
     location "Tron"
     kind "SharedLib"
@@ -26,9 +32,16 @@ project "Tron"
         "%{prj.name}/**.h"
     }
     includedirs{
-        "Tron/libs/spdlog/include",
-        "Tron/inc"
+        "%{prj.name}/src",
+        "%{prj.name}/libs/spdlog/include",
+        "%{prj.name}/inc",
+        "%{IncludeDir.GLFW}"
     }
+    links{
+        "GLFW",
+        "opengl32.lib"
+    }
+
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"
@@ -66,16 +79,17 @@ project "Sandbox"
         "%{prj.name}/src/**.cpp"
     }
 
-    links{
-        "Tron"
-    }
-
     includedirs{
         "Sandbox/inc",
         "Tron/libs/spdlog/include",
         "Tron/inc",
         "Tron"
     }
+    
+    links{
+        "Tron"
+    }
+
     filter "system:windows"
         cppdialect "C++17"
         staticruntime "On"

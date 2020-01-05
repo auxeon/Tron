@@ -4,11 +4,44 @@
     <Filter Include="inc">
       <UniqueIdentifier>{1F80880B-8B89-887C-1405-9F7C800D947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="inc\core">
+      <UniqueIdentifier>{F71BB360-E3E8-0D6C-0C02-FC13F82D43FA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="inc\events">
       <UniqueIdentifier>{43070C5F-2FBF-4DAC-98C6-2608849DE89C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="inc\platform">
+      <UniqueIdentifier>{73EB486E-5F4E-D812-08D4-10C9F415A495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="inc\platform\windows">
+      <UniqueIdentifier>{CDF03FEB-B97F-C9B4-629E-DDAF4E0CDA5A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="libs">
       <UniqueIdentifier>{2F149A7C-1B4B-9B0D-C437-8110B04D170F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW">
+      <UniqueIdentifier>{CEC42385-3A2F-D8FB-836D-89A1EF16B650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\deps">
+      <UniqueIdentifier>{A907304A-95D5-2350-7E69-94766AD6FFB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\deps\glad">
+      <UniqueIdentifier>{500C110A-BC6D-EE17-45DB-34CAB13B25D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\deps\mingw">
+      <UniqueIdentifier>{5ABC9D4C-464B-2716-EF69-3B11DBD737BC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\deps\vs2008">
+      <UniqueIdentifier>{ABD0E6F5-173D-A2F0-E030-3A4E4C5CC458}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\include">
+      <UniqueIdentifier>{41DA57F5-ADF0-558B-F667-E1AC62BD2613}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\include\GLFW">
+      <UniqueIdentifier>{20266A03-0C20-9355-F58C-2966E125F9C1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\GLFW\src">
+      <UniqueIdentifier>{E5391148-51FA-8C7E-1A35-D6FB86B4D15A}</UniqueIdentifier>
     </Filter>
     <Filter Include="libs\spdlog">
       <UniqueIdentifier>{877967C6-F32E-E0BB-7C23-DA92E8D7D6BF}</UniqueIdentifier>
@@ -40,9 +73,33 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{C55F2ECF-B12C-89DA-DA45-7782C671BE68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform">
+      <UniqueIdentifier>{41663D6D-2DC9-CC11-D64E-05C8C2909894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\platform\windows">
+      <UniqueIdentifier>{9B5931A8-87E8-BA71-3007-CF6C1C75CB17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tron.h" />
+    <ClInclude Include="inc\core\Application.h">
+      <Filter>inc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Core.h">
+      <Filter>inc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\EntryPoint.h">
+      <Filter>inc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Log.h">
+      <Filter>inc\core</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\core\Window.h">
+      <Filter>inc\core</Filter>
+    </ClInclude>
     <ClInclude Include="inc\events\ApplicationEvent.h">
       <Filter>inc\events</Filter>
     </ClInclude>
@@ -55,8 +112,116 @@
     <ClInclude Include="inc\events\MouseEvent.h">
       <Filter>inc\events</Filter>
     </ClInclude>
+    <ClInclude Include="inc\platform\windows\WindowsWindow.h">
+      <Filter>inc\platform\windows</Filter>
+    </ClInclude>
     <ClInclude Include="inc\tronpch.h">
       <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\getopt.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\glad\gl.h">
+      <Filter>libs\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\glad\khrplatform.h">
+      <Filter>libs\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\glad\vk_platform.h">
+      <Filter>libs\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\glad\vulkan.h">
+      <Filter>libs\GLFW\deps\glad</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\linmath.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\mingw\_mingw_dxhelper.h">
+      <Filter>libs\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\mingw\dinput.h">
+      <Filter>libs\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\mingw\xinput.h">
+      <Filter>libs\GLFW\deps\mingw</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\nuklear.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\nuklear_glfw_gl2.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\stb_image_write.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\tinycthread.h">
+      <Filter>libs\GLFW\deps</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\deps\vs2008\stdint.h">
+      <Filter>libs\GLFW\deps\vs2008</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\include\GLFW\glfw3.h">
+      <Filter>libs\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\include\GLFW\glfw3native.h">
+      <Filter>libs\GLFW\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\cocoa_joystick.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\cocoa_platform.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\egl_context.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\glx_context.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\internal.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\linux_joystick.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\mappings.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\nsgl_context.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\null_joystick.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\null_platform.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\osmesa_context.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\posix_thread.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\posix_time.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\wgl_context.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\win32_joystick.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\win32_platform.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\wl_platform.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\x11_platform.h">
+      <Filter>libs\GLFW\src</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\GLFW\src\xkb_unicode.h">
+      <Filter>libs\GLFW\src</Filter>
     </ClInclude>
     <ClInclude Include="libs\spdlog\bench\utils.h">
       <Filter>libs\spdlog\bench</Filter>
@@ -298,27 +463,18 @@
     <ClInclude Include="libs\spdlog\tests\utils.h">
       <Filter>libs\spdlog\tests</Filter>
     </ClInclude>
-    <ClInclude Include="inc\core\Log.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\core\Application.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\core\Core.h">
-      <Filter>inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\core\EntryPoint.h">
-      <Filter>inc</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\tronpch.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\core\Application.cpp">
-      <Filter>src</Filter>
+      <Filter>src\core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\Log.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\windows\WindowsWindow.cpp">
+      <Filter>src\platform\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tronpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

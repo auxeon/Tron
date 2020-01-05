@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;inc;libs\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -89,6 +89,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Debug-windows-x86_64\Tron\Tron.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -101,7 +102,7 @@
       <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;inc;libs\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -114,6 +115,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Release-windows-x86_64\Tron\Tron.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -126,7 +128,7 @@
       <PrecompiledHeaderFile>tronpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>TRON_PLATFORM_WINDOWS;TRON_BUILD_DLL;TRON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>libs\spdlog\include;inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;libs\spdlog\include;inc;libs\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -139,6 +141,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>..\bin\Dist-windows-x86_64\Tron\Tron.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -151,11 +154,48 @@
     <ClInclude Include="inc\core\Core.h" />
     <ClInclude Include="inc\core\EntryPoint.h" />
     <ClInclude Include="inc\core\Log.h" />
+    <ClInclude Include="inc\core\Window.h" />
     <ClInclude Include="inc\events\ApplicationEvent.h" />
     <ClInclude Include="inc\events\Event.h" />
     <ClInclude Include="inc\events\KeyEvent.h" />
     <ClInclude Include="inc\events\MouseEvent.h" />
+    <ClInclude Include="inc\platform\windows\WindowsWindow.h" />
     <ClInclude Include="inc\tronpch.h" />
+    <ClInclude Include="libs\GLFW\deps\getopt.h" />
+    <ClInclude Include="libs\GLFW\deps\glad\gl.h" />
+    <ClInclude Include="libs\GLFW\deps\glad\khrplatform.h" />
+    <ClInclude Include="libs\GLFW\deps\glad\vk_platform.h" />
+    <ClInclude Include="libs\GLFW\deps\glad\vulkan.h" />
+    <ClInclude Include="libs\GLFW\deps\linmath.h" />
+    <ClInclude Include="libs\GLFW\deps\mingw\_mingw_dxhelper.h" />
+    <ClInclude Include="libs\GLFW\deps\mingw\dinput.h" />
+    <ClInclude Include="libs\GLFW\deps\mingw\xinput.h" />
+    <ClInclude Include="libs\GLFW\deps\nuklear.h" />
+    <ClInclude Include="libs\GLFW\deps\nuklear_glfw_gl2.h" />
+    <ClInclude Include="libs\GLFW\deps\stb_image_write.h" />
+    <ClInclude Include="libs\GLFW\deps\tinycthread.h" />
+    <ClInclude Include="libs\GLFW\deps\vs2008\stdint.h" />
+    <ClInclude Include="libs\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="libs\GLFW\include\GLFW\glfw3native.h" />
+    <ClInclude Include="libs\GLFW\src\cocoa_joystick.h" />
+    <ClInclude Include="libs\GLFW\src\cocoa_platform.h" />
+    <ClInclude Include="libs\GLFW\src\egl_context.h" />
+    <ClInclude Include="libs\GLFW\src\glx_context.h" />
+    <ClInclude Include="libs\GLFW\src\internal.h" />
+    <ClInclude Include="libs\GLFW\src\linux_joystick.h" />
+    <ClInclude Include="libs\GLFW\src\mappings.h" />
+    <ClInclude Include="libs\GLFW\src\nsgl_context.h" />
+    <ClInclude Include="libs\GLFW\src\null_joystick.h" />
+    <ClInclude Include="libs\GLFW\src\null_platform.h" />
+    <ClInclude Include="libs\GLFW\src\osmesa_context.h" />
+    <ClInclude Include="libs\GLFW\src\posix_thread.h" />
+    <ClInclude Include="libs\GLFW\src\posix_time.h" />
+    <ClInclude Include="libs\GLFW\src\wgl_context.h" />
+    <ClInclude Include="libs\GLFW\src\win32_joystick.h" />
+    <ClInclude Include="libs\GLFW\src\win32_platform.h" />
+    <ClInclude Include="libs\GLFW\src\wl_platform.h" />
+    <ClInclude Include="libs\GLFW\src\x11_platform.h" />
+    <ClInclude Include="libs\GLFW\src\xkb_unicode.h" />
     <ClInclude Include="libs\spdlog\bench\utils.h" />
     <ClInclude Include="libs\spdlog\include\spdlog\async.h" />
     <ClInclude Include="libs\spdlog\include\spdlog\async_logger-inl.h" />
@@ -240,9 +280,15 @@
   <ItemGroup>
     <ClCompile Include="src\core\Application.cpp" />
     <ClCompile Include="src\core\Log.cpp" />
+    <ClCompile Include="src\platform\windows\WindowsWindow.cpp" />
     <ClCompile Include="src\tronpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="libs\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
